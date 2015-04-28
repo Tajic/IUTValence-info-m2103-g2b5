@@ -1,17 +1,27 @@
 
 /**
- * Permet le visuel des cases pour le joueur
+ * Create the display of the game
  * @author robinhug
  *
  */
 public class AfficherCases 
 {
 	/**
-	 *crée la grille pour le nombre de cases défini
+	 * number of case return by obtenirNbCases()
+	 */
+	private int number;
+	/**
+	 *Create the grid for the number of case defind
 	 */
 	public AfficherCases()
 	{
-		new Cases().obtenirNbCases();
+		this.number = new Cases().obtenirNbCases();		
+		for (int grid=0;grid<this.number;grid++)
+		{
+			System.out.println("-----");
+			System.out.println("| A |");
+			System.out.println("-----");
+		}
 	}
 
 }

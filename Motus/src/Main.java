@@ -1,6 +1,6 @@
 
 /**
- * Démarrage du jeu
+ * Start of the game;
  *
  * @author robinhug
  *
@@ -9,7 +9,7 @@
 public class Main
 {
 	/**
-	 * création d'une nouvelle partie
+	 * Creation of a new game(?)
 	 * @param args 
 	 *
 	 */

@@ -1,25 +1,25 @@
 
 /**
- * Mot entré par le joueur
+ * Word key in by player
  * @author robinhug
  *
  */
 public class MotJoueur 
 {
 	/**
-	 * mot que va entrer le joueur
+	 * Word key in by player
 	 */
 	public char[] leMotDuJoueur;
 	/**
-	 * enregistre motEntreJoue dans leMotDuJoueur
-	 * @param motEntreJoue est le mot entré par le joueur
+	 * Save motEntreJoue within leMotDuJoueur
+	 * @param motEntreJoue is the word of the player
 	 */
 	public MotJoueur(char[] motEntreJoue)
 	{
 		this.leMotDuJoueur=motEntreJoue;
 	}
 	/**
-	 * @return le mot du joueur
+	 * @return the word of player
 	 */
 	public char[] getMotJoueur()
 	{

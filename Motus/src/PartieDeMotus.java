@@ -1,46 +1,49 @@
 
 /**
- * Création de la partie pour le joueur en même temps que l'interface
+ *
+ * Create a new game for the players and the interface
  * @author robinhug
  *
  */
 public class PartieDeMotus 
 {	
 	/**
-	 *nombre de lettre du mot à trouver
+	 *number of letter for the word to find
 	 */
 	private int nbLettreDef;
 	
 	/**
-	 * tableau répertorant les caractères du mot à trouver
+	 * Table where every letter of the word to find are saved
 	 */
 	private char[] tabDeCar;
 	
 	
 	/**
-	 *crée un nouveau mot à chercher
-	 * et repertorie son nombre de lettres
-	 * @param tab tableau de caractère du mot à trouver
+	 *create a new word to find
+	 *and save it number of letter
+	 * @param tab table where the word is saved
 	 */
 	public PartieDeMotus(char[] tab)
 	{
-		this.nbLettreDef = new UnMot(this.nbLettreDef,this.tabDeCar).obtenirNbLettre();
+		this.nbLettreDef = new UnMotATrouver(this.nbLettreDef,this.tabDeCar).obtenirNbLettre();
 		this.tabDeCar= tab;
 	}
 	/**
-	 * crée un nouveau nombre de lettres pour le mot à trouver
+	 * Save only the number of letter of the word to find
+	 * 
 	 */
 	public PartieDeMotus()
 	{
-		this.nbLettreDef = new UnMot(this.nbLettreDef,this.tabDeCar).obtenirNbLettre();
+		this.nbLettreDef = new UnMotATrouver(this.nbLettreDef,this.tabDeCar).obtenirNbLettre();
 	}
 	
 	/**
-	 * crée toute la partie pour que le joueur puisse jouer ainsi que son interface
+	 * create every part of the game for the players as well as it interface
 	 */
 	public void jouer() 
 	{
 		new AfficherCases();
 		new MotJoueur(this.tabDeCar);
+		
 	}
 }
