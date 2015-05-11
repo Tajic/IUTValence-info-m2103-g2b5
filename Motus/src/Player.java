@@ -13,21 +13,32 @@ public class Player
 	
 	/**
 	 * Initialize the Size of the word of player
-	 * @param wordLength
+	 * @param lengthOfTheWord number of letter in the word
 	 */
-	public Player(int wordLength)
+	public Player(int lengthOfTheWord)
 	{
-		this.wordLength = wordLength;
+		this.wordLength = lengthOfTheWord;
 	}
 	
 	/**
-	 * @return  
+	 * @return the wordLength
+	 */
+	public int getWordLength() 
+	{
+		return this.wordLength;
+	}
+	
+	/**
+	 * @param word key in by the player
+	 * @return word proposed by the player
 	 */
 	public String getProposedWord(String word)
 	{
 		
-		return "";
-		//TODO return the word write by the player.
+		return word;
+		//TODO return the word written by the player.
 	}
+
+	
 	
 }

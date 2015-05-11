@@ -8,13 +8,18 @@
 public class MotusGame 
 {	
 	/**
+	 * Value by default of the showed letter
+	 */
+	@SuppressWarnings("unused")
+	private final static String DEFAULT_CHAR="_";
+	/**
 	 * Number of test by default
 	 */
 	private final static int DEFAULT_TRIES=10;
 	/**
 	 * Number of tests that the player can try before loosing
 	 */
-	private int numberOfTries;
+	private static int numberOfTries;
 	
 	/**
 	 * Table where every letter of the word to find is saved
@@ -24,45 +29,57 @@ public class MotusGame
 	
 	/**
 	 *create a new word to find
-	 * @param word to find
+	 * @param wordMaster to find
+	 * @param numberOfTriesKeyIn by the player
 	 */
-	public MotusGame(String word)
+	public MotusGame(String wordMaster,int numberOfTriesKeyIn)
 	{
-		this.wordTofind = word;
-		this.numberOfTries=DEFAULT_TRIES;
+		this.wordTofind = wordMaster;
+		numberOfTries=numberOfTriesKeyIn;		
+	}
+	
+	/**
+	 * 
+	 */
+	public MotusGame()
+	{
+		numberOfTries=DEFAULT_TRIES;
 	}
 	
 	/**
 	 * Get the number of test that can currently be done before loosing the game
+	 * @return number of tries.
 	 */
-	public int getNumberOfTries()
+	public static int getNumberOfTries()
 	{
-		return this.numberOfTries;
+		return numberOfTries;
 	}
 	
 	/**
 	 * create every part of the game for the players as well as it interface
+	 * @param wordPlayer key in by the player
 	 */
-	public void play() 
+	public void play(String wordPlayer) 
 	{
-		System.out.println(this.toString());
+		System.out.println(this.toString(wordPlayer));
 		
 	}
 	
-	public String toString()
+	/**
+	 * @param askedWord dial by the player himself
+	 * @return currentWord the currently entry word
+	 */
+	public String toString(String askedWord)
 	{
+		String word= new Player(4).getProposedWord(askedWord);
 		String currentWord="";
-		for (int numberOfRow=1;numberOfRow<this.numberOfTries;numberOfRow++)
+		for (int numberOfColumns=0;numberOfColumns<this.wordTofind.length();numberOfColumns++)
 		{
-			
-			for (int numberOfColumns=0;numberOfColumns<this.wordTofind.length();numberOfColumns++)
-			{
-				currentWord=currentWord+" | ";
-				currentWord=currentWord+" _ ";			
-			}
-			currentWord=currentWord+" |\n";
-
+			currentWord=currentWord+" | ";
+			currentWord=currentWord+word.charAt(numberOfColumns);			
 		}
+		currentWord=currentWord+" |\n";
+
 		return currentWord;
 	}
 }
