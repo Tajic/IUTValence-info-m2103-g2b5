@@ -7,9 +7,13 @@
 public class Player 
 {
 	/**
+	 * 
+	 */
+	private final static int DEFAULT_LENGTH= 4;
+	/**
 	 * Size of the word given by the player
 	 */
-	private final int wordLength;
+	private static int wordLength;
 	
 	/**
 	 * Initialize the Size of the word of player
@@ -17,15 +21,20 @@ public class Player
 	 */
 	public Player(int lengthOfTheWord)
 	{
-		this.wordLength = lengthOfTheWord;
+		wordLength = lengthOfTheWord;
 	}
 	
+	public Player() 
+	{
+		wordLength = DEFAULT_LENGTH;
+	}
+
 	/**
 	 * @return the wordLength
 	 */
-	public int getWordLength() 
+	public static int getWordLength() 
 	{
-		return this.wordLength;
+		return wordLength;
 	}
 	
 	/**

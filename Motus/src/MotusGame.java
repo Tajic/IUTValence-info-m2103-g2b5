@@ -1,3 +1,4 @@
+import java.util.Random;
 
 /**
  *
@@ -24,7 +25,7 @@ public class MotusGame
 	/**
 	 * Table where every letter of the word to find is saved
 	 */
-	private String wordTofind;
+	private static String wordTofind;
 	
 	
 	/**
@@ -41,8 +42,9 @@ public class MotusGame
 	/**
 	 * 
 	 */
-	public MotusGame()
+	public MotusGame(String wordMaster)
 	{
+		this.wordTofind = wordMaster;
 		numberOfTries=DEFAULT_TRIES;
 	}
 	
@@ -59,9 +61,9 @@ public class MotusGame
 	 * create every part of the game for the players as well as it interface
 	 * @param wordPlayer key in by the player
 	 */
-	public void play(String wordPlayer) 
+	public static void play(String wordPlayer) 
 	{
-		System.out.println(this.toString(wordPlayer));
+		System.out.println(toString(wordPlayer));
 		
 	}
 	
@@ -69,11 +71,11 @@ public class MotusGame
 	 * @param askedWord dial by the player himself
 	 * @return currentWord the currently entry word
 	 */
-	public String toString(String askedWord)
+	public static String toString(String askedWord)
 	{
-		String word= new Player(4).getProposedWord(askedWord);
+		String word= new Player().getProposedWord(askedWord);
 		String currentWord="";
-		for (int numberOfColumns=0;numberOfColumns<this.wordTofind.length();numberOfColumns++)
+		for (int numberOfColumns=0;numberOfColumns<wordTofind.length();numberOfColumns++)
 		{
 			currentWord=currentWord+" | ";
 			currentWord=currentWord+word.charAt(numberOfColumns);			
@@ -81,5 +83,23 @@ public class MotusGame
 		currentWord=currentWord+" |\n";
 
 		return currentWord;
+	}
+	
+	/**
+	 * generator of random word
+	 * @param numberOfLetter 
+	 * @return 
+	 */
+
+	public static String randomWord(int wordLength) 
+	{
+		Random randNumber = new Random();
+		String randWord="";
+		for (int Length=0;Length<wordLength;Length++)
+		{
+			randWord=(randWord+randNumber.nextInt(26) + 'a');
+		}
+		
+		return randWord;
 	}
 }

@@ -19,13 +19,15 @@ public class Main
 	@SuppressWarnings("javadoc")
 	public static void main(String[] args)
 	{
+		
 		System.out.println("Veuillez entrer un nombre d'essai:");
 		int numberOfTries=new Scanner(System.in).nextInt();
-		while (MotusGame.getNumberOfTries()<=numberOfTries)
+		
+		new MotusGame("TEST",numberOfTries);
+		new Player();
+		for (int numberTries=0;numberTries<numberOfTries;numberTries++)
 		{
-			System.out.println("Veuillez entrer un mot:");
-			String wordPlayer=new Scanner(System.in).next();
-			new MotusGame(,numberOfTries).play(wordPlayer);
+			MotusGame.play(MotusGame.randomWord(Player.getWordLength()));			
 		}
 	}
 
