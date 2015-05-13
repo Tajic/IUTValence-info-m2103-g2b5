@@ -1,4 +1,3 @@
-import java.awt.event.InputMethodListener;
 import java.util.Scanner;
 
 
@@ -21,9 +20,10 @@ public class Main
 	{
 		
 		System.out.println("Veuillez entrer un nombre d'essai:");
+		@SuppressWarnings("resource")
 		int numberOfTries=new Scanner(System.in).nextInt();
 		
-		new MotusGame("TEST",numberOfTries);
+		new MotusGame("test",numberOfTries);
 		new Player();
 		for (int numberTries=0;numberTries<numberOfTries;numberTries++)
 		{

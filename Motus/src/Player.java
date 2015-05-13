@@ -7,7 +7,7 @@
 public class Player 
 {
 	/**
-	 * 
+	 *  length of word by default
 	 */
 	private final static int DEFAULT_LENGTH= 4;
 	/**
@@ -24,6 +24,9 @@ public class Player
 		wordLength = lengthOfTheWord;
 	}
 	
+	/**
+	 *  Initialize by default the length of word of player
+	 */
 	public Player() 
 	{
 		wordLength = DEFAULT_LENGTH;
