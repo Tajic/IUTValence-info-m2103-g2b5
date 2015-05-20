@@ -30,7 +30,7 @@ public class MotusGame
 	
 	/**
 	 *create a new word to find
-	 * @param wordMaster to find
+	 * @param wordMaster  word to find
 	 * @param numberOfTriesKeyIn by the player
 	 */
 	public MotusGame(String wordMaster,int numberOfTriesKeyIn)

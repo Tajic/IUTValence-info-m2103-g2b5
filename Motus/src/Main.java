@@ -8,8 +8,9 @@ import java.util.Scanner;
  *
  */
 
-public class Main
+public class Main implements MotusGameInterface,PlayerInterface
 {
+
 	/**
 	 * Creation of a new game(?)
 	 * @param args 
@@ -23,12 +24,11 @@ public class Main
 		@SuppressWarnings("resource")
 		int numberOfTries=new Scanner(System.in).nextInt();
 		
-		new MotusGame("test",numberOfTries);
 		new Player();
+		new MotusGame(MotusGame.randomWord(Player.getWordLength()),numberOfTries);
 		for (int numberTries=0;numberTries<numberOfTries;numberTries++)
 		{
 			MotusGame.play(MotusGame.randomWord(Player.getWordLength()));			
 		}
 	}
-
 }
